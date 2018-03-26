@@ -33,20 +33,31 @@ describe('<ExtensionViewContainer />', () => {
 
   describe('when in broadcaster config mode', () => {
     it('renders correctly', () => {
-      const { wrapper } = setupShallow();
+      const { wrapper } = setupShallow({
+        mode: ExtensionMode.Dashboard
+      });
       expect(wrapper).toMatchSnapshot();
     });
     it('has the correct number of views', () => {
-
+      const { wrapper } = setupShallow({
+        mode: ExtensionMode.Dashboard
+      });
+      expect(wrapper.find('ExtensionView')).toHaveLength(1);
     });
   });
 
   describe('when in live config mode', () => {
     it('renders correctly', () => {
-      const { wrapper } = setupShallow();
+      const { wrapper } = setupShallow({
+        mode: ExtensionMode.Config
+      });
       expect(wrapper).toMatchSnapshot();
     });
     it('has the correct number of views', () => {
+      const { wrapper } = setupShallow({
+        mode: ExtensionMode.Config
+      });
+      expect(wrapper.find('ExtensionView')).toHaveLength(1);
     });
   });
 });
