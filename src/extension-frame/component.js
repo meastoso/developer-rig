@@ -49,13 +49,13 @@ export class ExtensionFrame extends Component {
     );
   }
 
-    _onIdentityLinked(isLinked) {
-      const { extension, onIdentityLinked } = this.props;
-      if (!onIdentityLinked) {
-          return;
-      }
+  _onIdentityLinked(isLinked) {
+    const { extension, onIdentityLinked } = this.props;
+    if (!onIdentityLinked) {
+        return;
+    }
 
-      onIdentityLinked(extension.id, isLinked);
+    onIdentityLinked(extension.id, isLinked);
   }
 
   _onFrameDoubleClick(evt) {

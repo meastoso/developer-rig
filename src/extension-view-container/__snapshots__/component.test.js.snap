@@ -31,129 +31,6 @@ ShallowWrapper {
           }
     }
     extensionViews={Array []}
-    mode={undefined}
-    openExtensionViewHandler={[Function]}
-/>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "extension": Object {
-        "authorName": "test",
-        "channelId": "channelId",
-        "description": "description",
-        "iconUrl": "icon_url",
-        "id": "id",
-        "name": "name",
-        "requestIdentity": false,
-        "sku": "sku",
-        "state": "state",
-        "summary": "summary",
-        "token": "token",
-        "vendorCode": "vendorCode",
-        "version": "0.1",
-        "views": Object {},
-        "whitelistedConfigUrls": Array [
-          "foo",
-        ],
-        "whitelistedPanelUrls": Array [
-          "bar",
-        ],
-      },
-      "id": undefined,
-      "mode": undefined,
-      "type": undefined,
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "extension": Object {
-          "authorName": "test",
-          "channelId": "channelId",
-          "description": "description",
-          "iconUrl": "icon_url",
-          "id": "id",
-          "name": "name",
-          "requestIdentity": false,
-          "sku": "sku",
-          "state": "state",
-          "summary": "summary",
-          "token": "token",
-          "vendorCode": "vendorCode",
-          "version": "0.1",
-          "views": Object {},
-          "whitelistedConfigUrls": Array [
-            "foo",
-          ],
-          "whitelistedPanelUrls": Array [
-            "bar",
-          ],
-        },
-        "id": undefined,
-        "mode": undefined,
-        "type": undefined,
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
-`;
-
-exports[`<ExtensionViewContainer /> when in live config mode renders correctly 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ExtensionViewContainer
-    deleteExtensionViewHandler={[Function]}
-    extension={
-        Object {
-            "authorName": "test",
-            "channelId": "channelId",
-            "description": "description",
-            "iconUrl": "icon_url",
-            "id": "id",
-            "name": "name",
-            "requestIdentity": false,
-            "sku": "sku",
-            "state": "state",
-            "summary": "summary",
-            "token": "token",
-            "vendorCode": "vendorCode",
-            "version": "0.1",
-            "views": Object {},
-            "whitelistedConfigUrls": Array [
-              "foo",
-            ],
-            "whitelistedPanelUrls": Array [
-              "bar",
-            ],
-          }
-    }
-    extensionViews={Array []}
     mode="config"
     openExtensionViewHandler={[Function]}
 />,
@@ -230,6 +107,129 @@ ShallowWrapper {
         "id": "config",
         "mode": "config",
         "type": "config",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`<ExtensionViewContainer /> when in live config mode renders correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ExtensionViewContainer
+    deleteExtensionViewHandler={[Function]}
+    extension={
+        Object {
+            "authorName": "test",
+            "channelId": "channelId",
+            "description": "description",
+            "iconUrl": "icon_url",
+            "id": "id",
+            "name": "name",
+            "requestIdentity": false,
+            "sku": "sku",
+            "state": "state",
+            "summary": "summary",
+            "token": "token",
+            "vendorCode": "vendorCode",
+            "version": "0.1",
+            "views": Object {},
+            "whitelistedConfigUrls": Array [
+              "foo",
+            ],
+            "whitelistedPanelUrls": Array [
+              "bar",
+            ],
+          }
+    }
+    extensionViews={Array []}
+    mode="dashboard"
+    openExtensionViewHandler={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "dashboard",
+    "nodeType": "class",
+    "props": Object {
+      "extension": Object {
+        "authorName": "test",
+        "channelId": "channelId",
+        "description": "description",
+        "iconUrl": "icon_url",
+        "id": "id",
+        "name": "name",
+        "requestIdentity": false,
+        "sku": "sku",
+        "state": "state",
+        "summary": "summary",
+        "token": "token",
+        "vendorCode": "vendorCode",
+        "version": "0.1",
+        "views": Object {},
+        "whitelistedConfigUrls": Array [
+          "foo",
+        ],
+        "whitelistedPanelUrls": Array [
+          "bar",
+        ],
+      },
+      "id": "dashboard",
+      "mode": "dashboard",
+      "type": "liveConfig",
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "dashboard",
+      "nodeType": "class",
+      "props": Object {
+        "extension": Object {
+          "authorName": "test",
+          "channelId": "channelId",
+          "description": "description",
+          "iconUrl": "icon_url",
+          "id": "id",
+          "name": "name",
+          "requestIdentity": false,
+          "sku": "sku",
+          "state": "state",
+          "summary": "summary",
+          "token": "token",
+          "vendorCode": "vendorCode",
+          "version": "0.1",
+          "views": Object {},
+          "whitelistedConfigUrls": Array [
+            "foo",
+          ],
+          "whitelistedPanelUrls": Array [
+            "bar",
+          ],
+        },
+        "id": "dashboard",
+        "mode": "dashboard",
+        "type": "liveConfig",
       },
       "ref": null,
       "rendered": null,
