@@ -1,9 +1,8 @@
 import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionViewDialog } from './component';
-import { DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js'
-import { DEFAULT_OVERLAY_SIZE } from '../constants/overlay_sizes.js'
-import { DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js'
-const { ExtensionAnchor } = window['extension-coordinator'];
+import { DEFAULT_EXTENSION_TYPE } from '../constants/extension-types.js';
+import { DEFAULT_OVERLAY_SIZE } from '../constants/overlay_sizes.js';
+import { DEFAULT_VIEWER_TYPE } from '../constants/viewer-types.js';
 
 describe('<ExtensionViewDialog />', () => {
   const setupShallow = setupShallowTest(ExtensionViewDialog, () => ({
@@ -34,17 +33,6 @@ describe('<ExtensionViewDialog />', () => {
     expect(wrapper.instance().props.saveHandler).toHaveBeenCalled();
   });
 
-  // it('on change is fired when toggling between view options', () => {
-  //   const { wrapper } = setupShallow({
-  //     extensionViews: {
-  //       panel: {},
-  //       videoOverlay: {},
-  //     }
-  //   });
-  //   wrapper.instance().onChange = jest.fn();
-  //   wrapper.find('RadioOption[value="Logged-Out Viewer"]').simulate('click');
-  //   expect(wrapper.instance().onChange).toHaveBeenCalled();
-  // })
   describe('for an extension that supports video overlays and panels', () => {
     const { wrapper } = setupShallow();
 
