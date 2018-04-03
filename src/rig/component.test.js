@@ -18,7 +18,6 @@ describe('<Rig />', () => {
 
   it('renders correctly', () => {
     const { wrapper } = setupShallow();
-    console.log(wrapper.instance());
     expect(wrapper).toMatchSnapshot();
   });
 
