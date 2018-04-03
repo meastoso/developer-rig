@@ -1,19 +1,18 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import { setupShallowTest } from '../tests/enzyme-util/shallow';
 import { ExtensionRigConsole } from './component';
 
 describe('<ExtensionRigConsole />', () => {
-  const component = shallow(
-    <ExtensionRigConsole />
-  );
+  const setupShallow = setupShallowTest(ExtensionRigConsole, () => ({}));
 
   it('renders correctly', () => {
-    expect(component).toMatchSnapshot();
+    const { wrapper } = setupShallow();
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('renders log messages correctly', () => {
-    expect(component.find('ExtensionRigConsoleLog').exists()).toEqual(false);
-    component.setState({
+    const { wrapper } = setupShallow();
+    expect(wrapper.find('ExtensionRigConsoleLog').exists()).toEqual(false);
+    wrapper.setState({
       logHistory: [
         {
           log: 'test',
@@ -21,7 +20,7 @@ describe('<ExtensionRigConsole />', () => {
         },
       ],
     });
-    component.update();
-    expect(component.find('ExtensionRigConsoleLog').exists()).toEqual(true);
+    wrapper.update();
+    expect(wrapper.find('ExtensionRigConsoleLog').exists()).toEqual(true);
   });
 });
