@@ -51,20 +51,16 @@ export class ExtensionFrame extends Component {
 
   _onIdentityLinked(isLinked) {
     const { extension, onIdentityLinked } = this.props;
-    if (!onIdentityLinked) {
-        return;
+    if (onIdentityLinked) {
+      onIdentityLinked(extension.id, isLinked);
     }
-
-    onIdentityLinked(extension.id, isLinked);
   }
 
   _onFrameDoubleClick(evt) {
     evt.preventDefault();
   }
 
-  _onModalRequested(confirmationRequest) {
-      this.props.onModalRequested(confirmationRequest);
-  }
+  _onModalRequested(confirmationRequest){}
 
   _iframeHostRefHandler(element) {
     this.parentElement = element;

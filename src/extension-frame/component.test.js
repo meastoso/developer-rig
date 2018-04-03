@@ -5,7 +5,6 @@ import { ExtensionFrame } from './component';
 const { ExtensionViewType, ExtensionAnchor, ExtensionMode } = window['extension-coordinator'];
 
 describe('<ExtensionFrame />', () => {
-  //const dblClickHandler = jest.spyOn(ExtensionFrame.prototype, '_onFrameDoubleClick');
   const setupShallow = setupShallowTest(ExtensionFrame, () => ({
     iframeClassName: 'rig-frame frameid-0',
     extension: ExtensionForTest,
@@ -14,10 +13,28 @@ describe('<ExtensionFrame />', () => {
   }));
 
   it('prevents the default when double clicked', () => {
+    const mockEvent = {};
+    mockEvent.preventDefault = jest.fn();
     const { wrapper } = setupShallow();
-    wrapper.simulate('dblclick');
-  //  expect(dblClickHandler).toHaveBeenCalled();
+    wrapper.instance()._onFrameDoubleClick(mockEvent);
+    expect(mockEvent.preventDefault).toHaveBeenCalled();
   });
+
+  it('onIdentityLink prop is called', () => {
+    const { wrapper } = setupShallow({
+      onIdentityLinked: jest.fn()
+    });
+    wrapper.instance()._onIdentityLinked();
+    expect(wrapper.instance().props.onIdentityLinked).toHaveBeenCalled();
+  });
+
+  it('parentElement is set when _iframeHostRefHandler is called', () => {
+    const { wrapper } = setupShallow();
+    const mockParent = 'test';
+    wrapper.instance()._iframeHostRefHandler(mockParent);
+    expect(wrapper.instance().parentElement).toBe(mockParent);
+  });
+
   describe('when in live config mode', () => {
     it('renders correctly', () => {
       const { wrapper } = setupShallow({
